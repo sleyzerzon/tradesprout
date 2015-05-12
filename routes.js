@@ -1,5 +1,10 @@
-function respond(req, res, next) {
-  res.send('hello ' + req.params.name);
+function respondHello(req, res, next) {
+  res.send('Hello, ' + req.params.name);
+  next();
+}
+
+function respondBye(req, res, next) {
+  res.send('Goodbye, ' + req.params.name);
   next();
 }
 
@@ -8,20 +13,20 @@ function helloWorld(req, res, next) {
   next();
 }
 
-module.exports = [
-  {
-    method: 'GET',
-    path: '/',
-    handler: helloWorld
-  },
-  {
-    method: 'GET',
-    path: '/hello/:name',
-    handler: respond
-  },
-  {
-    method: 'HEAD',
-    path: '/hello/:name',
-    handler: respond
-  }
-];
+
+
+module.exports = {
+
+  '/': {                      method: 'GET',
+                              path: '/',
+                              handler: helloWorld },
+
+  '/hello/:name': {           method: 'GET',
+                              path: '/hello/:name',
+                              handler: respondHello },
+
+  '/goodbye/:name': {         method: 'GET',
+                              path: '/goodbye/:name',
+                              handler: respondBye }
+
+};

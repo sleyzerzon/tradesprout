@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "description": "App for testing the TradeKing API.",
   "dependencies": {
-    "restify": "3.0.2"
+    "restify": "3.0.2",
+    "oauth": "latest"
   },
   "engine": "node 0.10.36"
 }
