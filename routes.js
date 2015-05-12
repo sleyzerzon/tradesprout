@@ -16,17 +16,19 @@ function helloWorld(req, res, next) {
 
 
 module.exports = {
-
-  '/': {                      method: 'GET',
-                              path: '/',
-                              handler: helloWorld },
-
-  '/hello/:name': {           method: 'GET',
-                              path: '/hello/:name',
-                              handler: respondHello },
-
-  '/goodbye/:name': {         method: 'GET',
-                              path: '/goodbye/:name',
-                              handler: respondBye }
-
+    '/': {
+        method:       'GET',
+        path:         '/',
+        handler:      helloWorld
+    },
+    '/hello/:name': {
+        method:       'GET',
+        path:         '/hello/:name',
+        handler:      respondHello
+    },
+    '/goodbye/:name': {
+        method:       'GET',
+        path:         '/goodbye/:name',
+        handler:      respondBye
+    }
 };
